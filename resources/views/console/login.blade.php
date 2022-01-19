@@ -7,19 +7,25 @@
         <title>My Portfolio</title>
 
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-        <link rel="stylesheet" href="/app.css">
+        <link rel="stylesheet" href="{{url('app.css')}}">
 
-        <script src="/app.js"></script>
+        <script src="{{url('app.js')}}"></script>
         
     </head>
     <body>
-
 
         <header class="w3-padding">
 
             <h1 class="w3-text-red">Portfolio Console</h1>
 
-            <a href="/">Return to My Portfolio</a>
+            @if (Auth::check())
+                You are logged in as {{auth()->user()->first}} {{auth()->user()->last}} |
+                <a href="/console/logout">Log Out</a> | 
+                <a href="/console/dashboard">Dashboard</a> | 
+                <a href="/">Website Home Page</a>
+            @else
+                <a href="/">Return to My Portfolio</a>
+            @endif
 
         </header>
 

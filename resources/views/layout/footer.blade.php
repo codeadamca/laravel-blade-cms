@@ -4,7 +4,7 @@
 <footer class="w3-padding">
 
     Footer Text | 
-    Copyright <?= date('Y') ?> |
+    Copyright {{date('Y')}}
     <a href="#">Facebook</a> | 
     <a href="#">Instagram</a>
 
