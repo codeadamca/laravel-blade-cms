@@ -1,6 +1,6 @@
 # php-cms-laravel
 
-This repository is copy of the simple [PHP CMS](https://github.com/codeadamca/php-cms) except the CMS has been converted to Laravel. 
+This repository is copy of the simple [PHP/Laravel CMS](https://github.com/codeadamca/php-cms-laravel) except the CMS views have been converted from vanilla PHP to Blade.
 
 A few notes regarding the CMS:
 
