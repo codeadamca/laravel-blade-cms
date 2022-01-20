@@ -1,5 +1,7 @@
 
-@include('layout.header')
+@extends ('layout.frontend')
+
+@section ('content')
 
 <section class="w3-padding">
 
@@ -27,4 +29,4 @@
 
 </section>
 
-@include('layout.footer')
+@endsection
