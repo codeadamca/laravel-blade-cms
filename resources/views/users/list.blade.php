@@ -31,11 +31,11 @@
 
         <hr>
 
-        <?php if(session()->has('message')): ?>
+        @if (session()->has('message'))
             <div class="w3-padding w3-margin-top w3-margin-bottom">
-                <div class="w3-red w3-center w3-padding"><?= session()->get('message') ?></div>
+                <div class="w3-red w3-center w3-padding">{{session()->get('message')}}</div>
             </div>
-        <?php endif; ?>
+        @endif
 
         <section class="w3-padding">
 
@@ -51,11 +51,11 @@
                 </tr>
                 <?php foreach($users as $user): ?>
                     <tr>
-                        <td><?= $user->first ?> <?= $user->last ?></td>
-                        <td><?= $user->email ?></td>
-                        <td><?= $user->created_at->format('M j, Y') ?></td>
-                        <td><a href="/console/users/edit/<?= $user->id ?>">Edit</a></td>
-                        <td><a href="/console/users/delete/<?= $user->id ?>">Delete</a></td>
+                        <td>{{$user->first}} {{$user->last}}</td>
+                        <td>{{$user->email}}</td>
+                        <td>{{$user->created_at->format('M j, Y')}}</td>
+                        <td><a href="/console/users/edit/{{$user->id}}">Edit</a></td>
+                        <td><a href="/console/users/delete/{{$user->id}}">Delete</a></td>
                     </tr>
                 <?php endforeach; ?>
             </table>

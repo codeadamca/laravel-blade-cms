@@ -10,13 +10,13 @@
 
     <br>
 
-    <?php if(Auth::check()): ?>
-        You are logged in as <?= auth()->user()->first ?> <?= auth()->user()->last ?> | 
+    @if (Auth::check())
+        You are logged in as {{auth()->user()->first}} {{auth()->user()->last}} | 
         <a href="/console/logout">Log Out</a> | 
         <a href="/console/dashboard">Dashboard</a>
-    <?php else: ?>
+    @else
         <a href="/console/login">Login</a>
-    <?php endif; ?>
+    @endif
 
 </footer>
 
