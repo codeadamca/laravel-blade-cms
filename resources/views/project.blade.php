@@ -1,5 +1,5 @@
 
-@extends ('layout.frontend')
+@extends ('layout.frontend', ['title' => $project->title])
 
 @section ('content')
 

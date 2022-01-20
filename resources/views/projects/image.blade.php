@@ -1,67 +1,37 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends ('layout.console')
 
-        <title>My Portfolio</title>
+@section ('content')
 
-        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-        <link rel="stylesheet" href="{{url('app.css')}}">
+<section class="w3-padding">
 
-        <script src="{{url('app.js')}}"></script>
-        
-    </head>
-    <body>
+    <h2>Project Image</h2>
 
-        <header class="w3-padding">
+    <div class="w3-margin-bottom">
+        @if($project->image)
+            <img src="{{asset('storage/'.$project->image)}}" width="200">
+        @endif
+    </div>
 
-            <h1 class="w3-text-red">Portfolio Console</h1>
+    <form method="post" action="/console/projects/image/{{$project->id}}" novalidate class="w3-margin-bottom" enctype="multipart/form-data">
 
-            @if (Auth::check())
-                You are logged in as {{auth()->user()->first}} {{auth()->user()->last}} |
-                <a href="/console/logout">Log Out</a> | 
-                <a href="/console/dashboard">Dashboard</a> | 
-                <a href="/">Website Home Page</a>
-            @else
-                <a href="/">Return to My Portfolio</a>
+        {{csrf_field()}}
+
+        <div class="w3-margin-bottom">
+            <label for="image">Image:</label>
+            <input type="file" name="image" id="image" value="{{old('image')}}" required>
+            
+            @if ($errors->first('image'))
+                <br>
+                <span class="w3-text-red">{{$errors->first('image')}}</span>
             @endif
+        </div>
 
-        </header>
+        <button type="submit" class="w3-button w3-green">Add Image</button>
 
-        <hr>
+    </form>
 
-        <section class="w3-padding">
+    <a href="/console/projects/list">Back to Project List</a>
 
-            <h2>Project Image</h2>
+</section>
 
-            <div class="w3-margin-bottom">
-                @if($project->image)
-                    <img src="{{asset('storage/'.$project->image)}}" width="200">
-                @endif
-            </div>
-
-            <form method="post" action="/console/projects/image/{{$project->id}}" novalidate class="w3-margin-bottom" enctype="multipart/form-data">
-
-                {{csrf_field()}}
-
-                <div class="w3-margin-bottom">
-                    <label for="image">Image:</label>
-                    <input type="file" name="image" id="image" value="{{old('image')}}" required>
-                    
-                    @if ($errors->first('image'))
-                        <br>
-                        <span class="w3-text-red">{{$errors->first('image')}}</span>
-                    @endif
-                </div>
-
-                <button type="submit" class="w3-button w3-green">Add Image</button>
-
-            </form>
-
-            <a href="/console/projects/list">Back to Project List</a>
-
-        </section>
-
-    </body>
-</html>
+@endsection

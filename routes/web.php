@@ -19,13 +19,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome', [
-        'projects' => Project::all()
+        'projects' => Project::all(),
     ]);
 });
 
 Route::get('/project/{project:slug}', function (Project $project) {
     return view('project', [
-        'project' => $project
+        'project' => $project,
     ]);
 })->where('project', '[A-z\-]+');
 

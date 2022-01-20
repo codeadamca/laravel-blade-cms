@@ -1,91 +1,61 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends ('layout.console')
 
-        <title>My Portfolio</title>
+@section ('content')
 
-        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-        <link rel="stylesheet" href="{{url('app.css')}}">
+<section class="w3-padding">
 
-        <script src="{{url('app.js')}}"></script>
-        
-    </head>
-    <body>
+    <h2>Edit User</h2>
 
-        <header class="w3-padding">
+    <form method="post" action="/console/users/edit/{{$user->id}}" novalidate class="w3-margin-bottom">
 
-            <h1 class="w3-text-red">Portfolio Console</h1>
+        <?= csrf_field() ?>
 
-            @if (Auth::check())
-                You are logged in as {{auth()->user()->first}} {{auth()->user()->last}} |
-                <a href="/console/logout">Log Out</a> | 
-                <a href="/console/dashboard">Dashboard</a> | 
-                <a href="/">Website Home Page</a>
-            @else
-                <a href="/">Return to My Portfolio</a>
+        <div class="w3-margin-bottom">
+            <label for="first">First Name:</label>
+            <input type="text" name="first" id="first" value="{{old('first', $user->first)}}" required>
+            
+            @if ($errors->first('first'))
+                <br>
+                <span class="w3-text-red">{{$errors->first('first')}}</span>
             @endif
+        </div>
 
-        </header>
+        <div class="w3-margin-bottom">
+            <label for="last">Last Name:</label>
+            <input type="text" name="last" id="last" value="{{old('last', $user->last)}}" required>
+            
+            @if ($errors->first('last'))
+                <br>
+                <span class="w3-text-red">{{$errors->first('last')}}</span>
+            @endif
+        </div>
 
-        <hr>
+        <div class="w3-margin-bottom">
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email" value="{{old('email', $user->email)}}">
 
-        <section class="w3-padding">
+            @if ($errors->first('email'))
+                <br>
+                <span class="w3-text-red">{{$errors->first('email')}}</span>
+            @endif
+        </div>
 
-            <h2>Edit User</h2>
+        <div class="w3-margin-bottom">
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password">
 
-            <form method="post" action="/console/users/edit/{{$user->id}}" novalidate class="w3-margin-bottom">
+            @if ($errors->first('password'))
+                <br>
+                <span class="w3-text-red">{{$errors->first('password')}}</span>
+            @endif
+        </div>
 
-                <?= csrf_field() ?>
+        <button type="submit" class="w3-button w3-green">Edit User</button>
 
-                <div class="w3-margin-bottom">
-                    <label for="first">First Name:</label>
-                    <input type="text" name="first" id="first" value="{{old('first', $user->first)}}" required>
-                    
-                    @if ($errors->first('first'))
-                        <br>
-                        <span class="w3-text-red">{{$errors->first('first')}}</span>
-                    @endif
-                </div>
+    </form>
 
-                <div class="w3-margin-bottom">
-                    <label for="last">Last Name:</label>
-                    <input type="text" name="last" id="last" value="{{old('last', $user->last)}}" required>
-                    
-                    @if ($errors->first('last'))
-                        <br>
-                        <span class="w3-text-red">{{$errors->first('last')}}</span>
-                    @endif
-                </div>
+    <a href="/console/users/list">Back to User List</a>
 
-                <div class="w3-margin-bottom">
-                    <label for="email">Email:</label>
-                    <input type="email" name="email" id="email" value="{{old('email', $user->email)}}">
+</section>
 
-                   @if ($errors->first('email'))
-                        <br>
-                        <span class="w3-text-red">{{$errors->first('email')}}</span>
-                    @endif
-                </div>
-
-                <div class="w3-margin-bottom">
-                    <label for="password">Password:</label>
-                    <input type="password" name="password" id="password">
-
-                    @if ($errors->first('password'))
-                        <br>
-                        <span class="w3-text-red">{{$errors->first('password')}}</span>
-                    @endif
-                </div>
-
-                <button type="submit" class="w3-button w3-green">Edit User</button>
-
-            </form>
-
-            <a href="/console/users/list">Back to User List</a>
-
-        </section>
-
-    </body>
-</html>
+@endsection
