@@ -8,7 +8,7 @@
 
     <form method="post" action="/console/users/add" novalidate class="w3-margin-bottom">
 
-        {{csrf_field()}}
+        @csrf
 
         <div class="w3-margin-bottom">
             <label for="first">First Name:</label>

@@ -14,7 +14,7 @@
 
     <form method="post" action="/console/projects/image/{{$project->id}}" novalidate class="w3-margin-bottom" enctype="multipart/form-data">
 
-        {{csrf_field()}}
+        @csrf
 
         <div class="w3-margin-bottom">
             <label for="image">Image:</label>
