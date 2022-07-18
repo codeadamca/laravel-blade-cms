@@ -1,4 +1,4 @@
-# php-cms-laravel
+# Laravel CMS using Balde Views
 
 This repository is copy of the simple [PHP/Laravel CMS](https://github.com/codeadamca/php-cms-laravel) except the CMS views have been converted from vanilla PHP to Blade.
 
