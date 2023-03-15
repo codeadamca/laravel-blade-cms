@@ -43,7 +43,7 @@ $ composer update
 
 5. We need to update the ```.env``` file with your database credentials:
 
-```
+```php
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
@@ -54,9 +54,17 @@ DB_PASSWORD=root
 
 On a Mac I also need to define the socket. Under ```DB_PASSWORD``` I'm going to add:
 
-```
+```php
 DB_SOCKET=/Applications/MAMP/tmp/mysql/mysql.sock
 ```
+
+The database setup included with this applications includes migrations and seeding. Run the following command to create the required tables and seed them with testing data:
+
+```
+$ php artisan migrate:refresh --seed
+```
+
+If you want to log in you will need to look up the email addresses in the ```user``` table and the default password is "password".
 
 6. Update your ```.env``` file to use the ```public``` file system:
 
@@ -67,18 +75,10 @@ FILESYSTEM_DRIVER=public
 And then run this command using the Terminal:
 
 ```
-php artisan storage:link
+$ php artisan storage:link
 ```
 
----
 
-The database setup includes migrations and seeding. Run the following command to initialize the database:
-
-```
-php artisan migrate:refresh --seed
-```
-
-All user acocunts will have the default password of "password".
 
 ## Tutorial Requirements:
 
