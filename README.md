@@ -72,8 +72,6 @@ The database setup included with this applications includes migrations and seedi
 $ php artisan migrate:refresh --seed
 ```
 
-If you want to log in you will need to look up the email addresses in the ```user``` table and the default password is "password".
-
 6. Update your ```.env``` file to use the ```public``` file system:
 
 ```php
@@ -100,7 +98,7 @@ php artisan key:generate
 
 9. Test!
 
-10. To log in to the admin, use the URL http://localhost:8888/console/login.
+10. To log in to the admin, use the URL http://localhost:8888/console/login. You will need to look up the email addresses in the ```user``` table and the default password is "password".
 
 ## Tutorial Requirements:
 
