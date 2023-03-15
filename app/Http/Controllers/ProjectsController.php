@@ -86,6 +86,12 @@ class ProjectsController extends Controller
 
     public function delete(Project $project)
     {
+
+        if($project->image)
+        {
+            Storage::delete($project->image);
+        }
+        
         $project->delete();
         
         return redirect('/console/projects/list')
@@ -106,7 +112,10 @@ class ProjectsController extends Controller
             'image' => 'required|image',
         ]);
 
-        Storage::delete($project->image);
+        if($project->image)
+        {
+            Storage::delete($project->image);
+        }
         
         $path = request()->file('image')->store('projects');
 
