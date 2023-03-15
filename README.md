@@ -27,7 +27,7 @@ $ git clone https://github.com/codeadamca/laravel-blade-cms.git
 
 3. Using the Terminal, use ```ls``` on a Mac ot ```dir``` on a Windows machine to view the files in the current directory:
 
-IMAGE
+![Listing Files](https://raw.githubusercontent.com/codeadamca/laravel-blade-cms/main/.readme/screenshot-list.png)
 
 You should now see a folder named ```laravel-blade-cms```. Change the present working directory to your new folder:
 
