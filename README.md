@@ -64,7 +64,7 @@ DB_SOCKET=/Applications/MAMP/tmp/mysql/mysql.sock
 
 Your socket setting may be different. When your MAMP server is up and running, open the MAMP start page (http://:8888/MAMP), go to the MySQL tab, and your socket location will be listed:
 
-IMAGE
+![MAMP Socket](https://raw.githubusercontent.com/codeadamca/laravel-blade-cms/main/.readme/screenshot-mamp-socket.png)
 
 The database setup included with this applications includes migrations and seeding. Run the following command to create the required tables and seed them with testing data:
 
@@ -86,7 +86,7 @@ $ php artisan storage:link
 
 7. Opne up your MAMP preferences and set the document root to the ```public``` folder in your ```laravel-blade-cms``` folder:
 
-IMAGE
+![Root Folder](https://raw.githubusercontent.com/codeadamca/laravel-blade-cms/main/.readme/screenshot-mamp.png)
 
 Restart MAMP. 
 
