@@ -13,17 +13,17 @@ A few notes For Windows Machines:
 Enable the following three lines:
 
 ```
-;extension=pdo_pgsql.so
-;extension=php_fileinfo.dll
-;extension=php_zip.dll
+;extension=pdo_mysql
+;extension=fileinfo
+;extension=zip
 ```
 
 And remove the semi-colon:
 
 ```
-extension=pdo_pgsql.so
-extension=php_fileinfo.dll
-extension=php_zip.dll
+extension=pdo_mysql
+extension=fileinfo
+extension=zip
 ```
 
 To set up this CMS follow these steps:
