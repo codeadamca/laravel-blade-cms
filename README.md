@@ -8,7 +8,7 @@ A few notes For Windows Machines:
 
 1. A Laravel application deploy locall on MAMP seems to have problems running on a Windows computer inside the ```OneDrive``` folder. Make sure your project folder is outside of your ```OneDrive``` folder.
 
-2. When PHP is downloaded for Windows, the ```php.ini``` file will default to having ```fileinfo```, ```zip```, and ```pdo_mysl``` disabled. You may need to anable these inside the ```php.ini``` file. This file is likely located at ```c:/PHP/php.ini```. Open this file and make the following changes:
+2. When PHP is downloaded for Windows, the ```php.ini``` file will default to having ```fileinfo```, ```zip```, and ```pdo_mysql``` disabled. You may need to anable these inside the ```php.ini``` file. This file is likely located at ```c:/PHP/php.ini```. Open this file and make the following changes:
 
 Enable the following three lines:
 
