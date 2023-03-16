@@ -4,6 +4,28 @@ This repository is a copy of the simple [PHP/Laravel CMS](https://github.com/cod
 
 For these instructions I'm going to us MAMP as my development environment. But you could upload this application to a host, deploy using Docker, or the Laravel built in server.
 
+A few notes For Windows Machines:
+
+1. A Laravel application deploy locall on MAMP seems to have problems running on a Windows computer inside the ```OneDrive``` folder. Make sure your project folder is outside of your ```OneDrive``` folder.
+
+2. When PHP is downloaded for Windows, the ```php.ini``` file will default to having ```fileinfo```, ```zip```, and ```pdo_mysl``` disabled. You may need to anable these inside the ```php.ini``` file. This file is likely located at ```c:/PHP/php.ini```. Open this file and make the following changes:
+
+Enable the following three lines:
+
+```
+;extension=pdo_pgsql.so
+;extension=php_fileinfo.dll
+;extension=php_zip.dll
+```
+
+And remove the semi-colon:
+
+```
+extension=pdo_pgsql.so
+extension=php_fileinfo.dll
+extension=php_zip.dll
+```
+
 To set up this CMS follow these steps:
 
 1. Using your Terminal (or Git Bash on Windows), navigate to your working folder:
