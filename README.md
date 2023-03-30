@@ -49,7 +49,7 @@ $ git clone https://github.com/codeadamca/laravel-blade-cms.git
 
 3. Using the Terminal, use ```ls``` on a Mac ot ```dir``` on a Windows machine to view the files in the current directory:
 
-![Listing Files](https://raw.githubusercontent.com/codeadamca/laravel-blade-cms/main/_readme/screenshot-list.png)
+![Listing Files](_readme/screenshot-list.png)
 
 You should now see a folder named ```laravel-blade-cms```. Change the present working directory to your new folder:
 
@@ -86,7 +86,7 @@ DB_SOCKET=/Applications/MAMP/tmp/mysql/mysql.sock
 
 Your socket setting may be different. When your MAMP server is up and running, open the MAMP start page (http://:8888/MAMP), go to the MySQL tab, and your socket location will be listed:
 
-![MAMP Socket](https://raw.githubusercontent.com/codeadamca/laravel-blade-cms/main/_readme/screenshot-mamp-socket.png)
+![MAMP Socket](_readme/screenshot-mamp-socket.png)
 
 The database setup included with this applications includes migrations and seeding. Run the following command to create the required tables and seed them with testing data:
 
@@ -108,7 +108,7 @@ $ php artisan storage:link
 
 7. Opne up your MAMP preferences and set the document root to the ```public``` folder in your ```laravel-blade-cms``` folder:
 
-![Root Folder](https://raw.githubusercontent.com/codeadamca/laravel-blade-cms/main/_readme/screenshot-mamp.png)
+![Root Folder](_readme/screenshot-mamp.png)
 
 Restart MAMP. 
 
@@ -126,9 +126,11 @@ To view the public front end go to http://localhost:8888/ on a Mac or http://loc
 
 You will need to look up the email addresses in the ```user``` table and the default password is "password".
 
-## Tutorial Requirements:
+***
 
-* [Visual Studio Code](https://code.visualstudio.com/) or [Brackets](http://brackets.io/) (or any code editor)
+## Repo Resources
+
+* [Visual Studio Code](https://code.visualstudio.com/)
 * [Laravel](https://laravel.com/)
 
 Full tutorial URL: https://codeadam.ca/learning/php-cms-laravel.html
