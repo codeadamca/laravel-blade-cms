@@ -130,7 +130,7 @@ To log in to the admin, use the URL http://localhost:8888/console/login on a Mac
 
 You will need to look up the email addresses in the ```user``` table and the default password is "password".
 
-> Full tutorial URL:  
+> Full tutorial URL:    
 > https://codeadam.ca/learning/php-cms-laravel.html
 
 ***
